@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>More to come!</title>
+	<link rel = "stylesheet" href = "rangeslider.css">
+	<link rel = "stylesheet" href = "funstyle.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125806181-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-125806181-1');
+	</script>
+
+</head>	
+<body>
+	
+	<ul class="nav">
+		
+		
+		<li>
+			<a target="_blank" href="https://github.com/jeffreyyang3"> GitHub </a>
+		</li>
+		<li>
+			<a target="_blank" href="Resume-JeffreyYang.pdf"> Resume </a>
+		</li>
+		<li>
+			<a  target="_blank" href="https://linkedin.com/in/jeffreyyang3"> LinkedIn </a>
+		</li>
+	
+	
+		
+		<li>
+			<a href="about.html"> About Me </a>
+		</li>
+		<li>
+			<a href="index.html"> Home </a>
+		</li>
+	</ul>
+	
+	<div id='content'>
+	<h1>Personal Projects:</h1>
+	<h1> Online Multiplayer Card Game - <a target="_blank" 
+		href="https://desolate-woodland-61499.herokuapp.com/demo/">
+			Heroku
+		</a></h1>
+	<p class='projectDescription'>
+		A card game heavily based on "Cards Against Humanity". I used a Django-based framework called 
+		oTree that I use in my work for the Economics department at UCSC. It's meant for economics experiments,
+		but I didn't want to limit my use of it to that. 
+		<br><br>
+		Anyone can create a game session, and their friends can join through links that the game generates.
+		The actual game draws from a text file of Cards Against Humanity cards, but the
+		 GIF below shows dummy text for the cards since many of the cards aren't safe for work.
+
+
+
+
+		<br><br>Note: for some reason, only the single use links for each session work if
+		 multiple devices are used for a game.
+	</p> <br>
+	<img src="cardsGif.gif" alt="there was supposed to be a gif here">
+	
+
+
+
+
+
+
+	<h1> Reddit CLI - <a target="_blank" href="https://github.com/jeffreyyang3/redditScript">
+		GitHub
+	</a></h1>
+	<p class = 'projectDescription'>
+		 A Python script I wrote to browse Reddit through the command line. Perfect for wasting time
+		 while making it look like you're hard at work. It uses urllib3, and Python's standard JSON
+		 and text wrapping libraries. With this script, one can continually browse subreddits
+		 and posts. <br><br>In the process of writing the program, I had problems accounting for differing reply
+		 depth on different comments. I fixed the problems with a recursive approach.
+		It wasn't anything very advanced, but it felt nice to finally apply that concept in a
+		non academic setting. <br><br>
+		I also wrote a version that used only built-in libraries. It's in the notUrllib3 folder. I wrote it so I could run the script on our school's 
+		UNIX timeshare. I can't think of any realistic situations where I would need to do that, but I'll feel really good 
+		about myself if a situation like that does come up.
+	</p> <br>
+	<div class = 'container' id = 'reddit'>
+
+		<img src="redditGif.gif" alt="there was supposed to be a gif here check out the video https://www.youtube.com/watch?v=nWHq1OFa5Yk&feature=youtu.be"> 
+	</div>
+
+	<h1> Data Visualization </h1>
+	<p class='projectDescription'>
+		Visualizes inputs and outputs for a stochastic process <br>
+		Written with Chart.js and HTML5 Canvas <br>
+
+		
+		
+	</p>
+	
+	
+	<h3> Input a number between 0 and 1</h3>
+	<form onsubmit="return false;">	
+		<input placeholder="User Input" type = "text" id = "input"> 
+		
+	</form>
+
+	<div class="container">
+		<button type = "button" onclick = "add()"> Add Input </button>
+		<button type = "button" onclick = "toggle()" id = "toggle"> Toggle Stochastic Value Visibility </button>
+	</div>
+
+
+
+	<h2 id = "profit"></h2>
+	<h2 id = "cumulative"> </h2>
+	<h2 id = "randnum"> </h2>
+	<h2 id = "demo"></h2>
+	<div class="container">
+		<canvas id="chart" width="400" height="200"></canvas>
+		<canvas id="chart1" width="400" height="200"> </canvas>
+	</div>
+	<br>
+	<div class="container">
+		<canvas id="chart2" width="400" height="200"> </canvas>
+		<canvas id="chart3" width="400" height="200"> </canvas>
+	</div>
+
+
+
+	
+	<h1 style='margin-top: 0px'> Particle Simulation </h1>
+	<p class='projectDescription'>
+		Simulates random particle movement. <br>
+		Written with JS and HTML5 Canvas. <br> <br>
+	
+	</p>
+	<canvas id = "banvas"></canvas>
+	
+    <h3> Click on the canvas to add a particle there<h3>
+
+    <div class="container">
+		<button type = "button" onclick = "resetcanvas()"> Reset </button>
+	</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="scripts/jquery-3.2.1.js"></script>
+	<script src="scripts/canvas.js"></script>
+	<script src="scripts/scratchpad.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+</body>
+</html>

@@ -5,16 +5,21 @@
         <h2> {{ title }} </h2>
         <h4> {{ technologies }}</h4>
         <p> {{ description }} </p>
-        {{ source }}
-        
-
-
-
-
-
-
-
-
+        <a :href="url"> {{ sourceType }} </a>
 
     </div>
 </template>
+
+<script>
+    export default {
+        name: "projDesc",
+        props: {
+            title: String,
+            technologies: String,
+            description: String,
+            url: String,
+            sourceType: String,
+        }
+    }
+
+</script>
