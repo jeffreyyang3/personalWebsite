@@ -19,6 +19,7 @@
                 internalLinks: {
                  
                     'About': 'about',
+                    'Projects': 'projects',
                     
                 },
                 externalLinks: {

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import about from "@/views/about.vue"
+import about from "@/views/About.vue"
+import projects from "@/views/Projects.vue"
 
 
 
@@ -18,7 +19,14 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
       component: about
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: projects 
+
     }
+
 
   ]
 })

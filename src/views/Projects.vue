@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="projects">
     <genericDesc v-for="(content, title) in items"
     v-bind:key="title" :title="title" :content="content"/>
     
@@ -11,7 +11,7 @@
 import genericDesc from '@/components/genericDesc.vue'
 
 export default {
-  name: 'about',
+  name: 'projects',
   components: {
    
     genericDesc
@@ -19,9 +19,8 @@ export default {
   data: function(){
     return {
       items:{
-        'About Me': " hey hey hey hey hey hey hey hey hey hey hey hey yooooooooo askdjfklajsd;fjksa;dfjk;sajkdf;lsakjd;faldsf \
-        hey hey hey hey hey hey hey hey hey hey hey hey hey hey ",
-        'Experience': "vue django oasdkfjal;sdkjf; dono maosd ",
+        'About Me': "im jeffre aspiring swe",
+        'Experience': "leeps lab program man",
 
       }
       

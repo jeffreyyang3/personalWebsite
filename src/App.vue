@@ -23,6 +23,7 @@
 <script>
   import homePage from './views/homePage.vue'
   import navBar from './components/navBar.vue'
+  
   export default {
     name: "app",
     components: {
@@ -34,16 +35,21 @@
 
 
 <style>
+body {
+  background-color: #f6f6f6;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center; 
   
+  
   color: #2c3e50;
   
 }
 nav {
+
   padding-top: 20px;
 
   
@@ -51,6 +57,7 @@ nav {
   
 }
 nav a {
+  font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
   padding: 10px;
@@ -60,24 +67,30 @@ nav a {
 
 #homePage > h1{
   font-size: 380%;
-  margin-bottom: -.35em
+  margin-bottom: -.25em
 }
 #homePage > h2{
-  font-size: 200%;
+  font-size: 180%;
   margin-bottom: -.1em
 
 }
+.gdContent{
+  text-align: center;
+  font-size: 125%;
+  max-width: 60ch;
+  margin: 0 auto;
+}
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .1s;
+  transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 .slide-fade-enter-active {
-  transition: all .2s ease;
+  transition: all 1s ease;
 }
 .slide-fade-leave-active {
-  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
