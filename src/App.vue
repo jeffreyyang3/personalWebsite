@@ -1,24 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
+   <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About Me</router-link>
       
-    </div> 
+    </div> -->
+    
+    
+    
+    
+    <homePage></homePage>
+    <navBar></navBar>
     <transition name="slide-fade">
       <router-view/>
     </transition>
+    
   </div>
 </template>
+
+
+<script>
+  import homePage from './views/homePage.vue'
+  import navBar from './components/navBar.vue'
+  export default {
+    name: "app",
+    components: {
+      navBar,
+      homePage
+    }
+  }
+</script>
+
 
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center; */
+  
   color: #2c3e50;
-  margin-top: 60px;
+  
+}
+nav {
+  
+  clear: both;
+  
+}
+nav a {
+  text-decoration: none
+
+}
+#homePage > h1{
+  font-size: 380%;
+  margin-bottom: -.35em
+}
+#homePage > h2{
+  font-size: 200%;
+  margin-bottom: -.1em
+
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .1s;

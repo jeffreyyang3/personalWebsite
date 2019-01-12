@@ -1,13 +1,20 @@
 // project description
 
 <template>
-    <div class="homePage">
-       {{ bonkman }}
-       <ul v-for="bar in array" 
-       v-bind:style="{ margin: '45px', marginTop: '-30px'}"
+    <div id="homePage">
+        <h1> Jeffrey Yang</h1> 
+        <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br>
+      
+      <!-- <ul v-for="bar in array" 
+     
        v-bind:key="bar">
-		<div v-bind:style="divClasses(bar)"> </div>
-	    </ul>
+        v-bind:style="{ margin: '45px', marginTop: '-30px'}" -->
+        <div id="sort">
+		<div v-for="bar in array" 
+     
+       v-bind:key="bar" v-bind:style="divClasses(bar)"> </div>
+       </div> 
+	    
     </div>
 </template>
 
@@ -19,6 +26,7 @@
             return{
                 array: [],
                 upper: 0,
+                sortDone: false
             }
         },
         methods:{
@@ -26,14 +34,14 @@
                 setTimeout(function timeoutSort(array, i) {
 
                     if (i < array.length) {
-                        
+                   
                         this.arrayStep(array, i);
                         
                         setTimeout(timeoutSort.bind(this), 25, array, i + 1);
                         
                     }
                     else{
-                        sortDone = true
+                        this.sortDone = true
                     }
                 }.bind(this), 25, this.array, 0);
 
@@ -74,15 +82,13 @@
             return {
            
                 width: '5px',
-                height: value * .05 + 'em',
+                height: value * .03 + 'em',
                 display: 'block',
-                border: ".03em solid black",        
+                //border: ".03em solid black",        
                 backgroundColor: this.rainbowArray[value - 1],
                 float: 'left',
-                marginTop: '0px',
-                backgroundColor: this.rainbowArray[value - 1]
-            
-
+                //marginTop: '0px',
+                
             }
             
         },
@@ -104,7 +110,7 @@
 
     },
     mounted(){
-        this.createArray(100);
+        this.createArray(120);
         this.rainbowArray = new Array(this.array.length)
         this.createRainbowArray(this.rainbowArray)
         setTimeout(()=>{
@@ -113,11 +119,6 @@
        
         
     },
-    
-            
-        
-
-    }
-    
-
+  }
+ 
 </script>
