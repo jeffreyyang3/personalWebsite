@@ -11,6 +11,7 @@
     
     <homePage></homePage>
     <navBar></navBar>
+    
     <transition name="slide-fade">
       <router-view/>
     </transition>
@@ -37,20 +38,26 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*text-align: center; */
+  text-align: center; 
   
   color: #2c3e50;
   
 }
 nav {
+  padding-top: 20px;
+
   
   clear: both;
   
 }
 nav a {
-  text-decoration: none
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 150%;
 
 }
+
 #homePage > h1{
   font-size: 380%;
   margin-bottom: -.35em

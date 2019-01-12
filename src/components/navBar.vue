@@ -2,9 +2,9 @@
     <nav class="navBar">
         <router-link v-for="(link,name) in internalLinks" 
         v-bind:key="name" :to="link"> 
-        {{ name }} | </router-link> 
+        {{ name }}  </router-link> 
         <a v-for="(link,name) in externalLinks" 
-        v-bind:key="name" :href="link" target="_blank"> {{ name }} |</a>
+        v-bind:key="name" :href="link" target="_blank"> {{ name }} </a>
     </nav>
 </template>
 

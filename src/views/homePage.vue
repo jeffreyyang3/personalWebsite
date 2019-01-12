@@ -37,13 +37,13 @@
                    
                         this.arrayStep(array, i);
                         
-                        setTimeout(timeoutSort.bind(this), 25, array, i + 1);
+                        setTimeout(timeoutSort.bind(this), 10, array, i + 1);
                         
                     }
                     else{
                         this.sortDone = true
                     }
-                }.bind(this), 25, this.array, 0);
+                }.bind(this), 10, this.array, 0);
 
                 
 
@@ -81,13 +81,14 @@
         divClasses: function(value) {
             return {
            
-                width: '5px',
-                height: value * .03 + 'em',
-                display: 'block',
+                width: '0.13em',
+                height: `${value * .015}em`,
+                display: 'inline-block',
                 //border: ".03em solid black",        
                 backgroundColor: this.rainbowArray[value - 1],
-                float: 'left',
-                //marginTop: '0px',
+                //float: 'left',
+                verticalAlign: 'top',
+                // marginTop: 'auto',
                 
             }
             
@@ -110,7 +111,7 @@
 
     },
     mounted(){
-        this.createArray(120);
+        this.createArray(200);
         this.rainbowArray = new Array(this.array.length)
         this.createRainbowArray(this.rainbowArray)
         setTimeout(()=>{
