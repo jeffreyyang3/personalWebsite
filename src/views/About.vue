@@ -13,15 +13,20 @@ import genericDesc from '@/components/genericDesc.vue'
 export default {
   name: 'about',
   components: {
-   
     genericDesc
   },
   data: function(){
     return {
       items:{
-        'About Me': " hey hey hey hey hey hey hey hey hey hey hey hey yooooooooo askdjfklajsd;fjksa;dfjk;sajkdf;lsakjd;faldsf \
-        hey hey hey hey hey hey hey hey hey hey hey hey hey hey ",
-        'Experience': "vue django oasdkfjal;sdkjf; dono maosd ",
+        'About Me': ["For most of my life, I didn't see myself being \
+        a programmer. Thankfully, I explored that possibility in college \
+        and ended up really liking it. I was drawn to everything \
+        (besides some of the math) ",
+        "asdf"
+        
+        ]
+
+      
 
       }
       

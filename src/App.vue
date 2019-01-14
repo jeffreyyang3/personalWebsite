@@ -48,6 +48,7 @@ body {
   color: #2c3e50;
   
 }
+
 nav {
 
   padding-top: 20px;
@@ -79,6 +80,7 @@ nav a {
   font-size: 125%;
   max-width: 60ch;
   margin: 0 auto;
+  
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;

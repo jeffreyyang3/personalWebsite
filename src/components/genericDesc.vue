@@ -1,22 +1,20 @@
 <template>
     <div class="genericDesc">
         <h1 class="gdHeading"> {{ title }} </h1>
-        <p class="gdContent"> {{ content }} </p>
+        <div v-for="par in content" v-bind:key="par" 
+        class="gdContent"> <p>{{ par }} </p>  </div>
+        
     </div>
 </template>
 
 <script>
-    export default {
+    export default {s
         name: "genericDesc",
         props: {
             title: String,
-            content: String
+            content: Array
         },
-        data: function() {
-            return {
-                message: "fromData"
-            }
-        },
+       
        
     }
 </script>
