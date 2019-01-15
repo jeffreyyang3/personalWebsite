@@ -18,13 +18,9 @@ export default {
   data: function(){
     return {
       items:{
-        'About Me': ["For most of my life, I didn't see myself being \
-        a programmer. Thankfully, I explored that possibility in college \
-        and ended up really liking it. I was drawn to everything \
-        (besides some of the math), the emphasis on the discrete, \
-         the hardware, and the low barrier of entry to creating, and more.",
-        "I've mainly only explored web development. but I'm open to "
-        
+        'About Me': ["I'm a computer science major at UC Santa Cruz \
+        "
+       
         ]
 
       

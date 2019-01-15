@@ -3,7 +3,7 @@
 <template>
     <div id="homePage">
         <h1> Jeffrey Yang</h1> 
-        <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br>
+        <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
         <div id="sort">
 		<div v-bind:key="bar"
              v-bind:style="divClasses(bar)"

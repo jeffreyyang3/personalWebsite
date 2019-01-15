@@ -55,8 +55,8 @@ nav a {
 }
 
 #homePage > h1{
-  font-size: 380%;
-  margin-bottom: -.25em
+  font-size: 600%;
+  margin-bottom: .2em;
 }
 #homePage > h2{
   font-size: 180%;
