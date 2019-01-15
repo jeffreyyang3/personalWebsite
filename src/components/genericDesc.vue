@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    export default {s
+    export default {
         name: "genericDesc",
         props: {
             title: String,
@@ -18,4 +18,13 @@
        
     }
 </script>
+
+<style>
+    .gdContent{
+        text-align: center;
+        font-size: 110%;
+        max-width: 50ch;
+        margin: 0 auto;
+    }
+</style>
 

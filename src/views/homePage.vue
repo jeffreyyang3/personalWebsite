@@ -4,17 +4,11 @@
     <div id="homePage">
         <h1> Jeffrey Yang</h1> 
         <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br>
-      
-      <!-- <ul v-for="bar in array" 
-     
-       v-bind:key="bar">
-        v-bind:style="{ margin: '45px', marginTop: '-30px'}" -->
         <div id="sort">
-		<div v-for="bar in array" 
-     
-       v-bind:key="bar" v-bind:style="divClasses(bar)"> </div>
-       </div> 
-	    
+		<div v-bind:key="bar"
+             v-bind:style="divClasses(bar)"
+             v-for="bar in array"> </div>
+       </div>
     </div>
 </template>
 
@@ -32,27 +26,19 @@
         methods:{
             insertionSort: function(){
                 setTimeout(function timeoutSort(array, i) {
-
-                    if (i < array.length) {
-                   
+                    if (i < array.length){
                         this.arrayStep(array, i);
-                        
                         setTimeout(timeoutSort.bind(this), 10, array, i + 1);
-                        
                     }
                     else{
                         this.sortDone = true
                     }
                 }.bind(this), 10, this.array, 0);
-
-                
-
                 return this.array;
-
         },
 
         createArray: function (arraySize) {
-            this.array = []
+            this.array = [];
             for(let i = 1; i < arraySize; i++){ 
                 this.array.push(i)
             }
@@ -62,9 +48,9 @@
             
         },
         arrayStep: function(arry,i){
-            arry.push()
-            var temp = arry[i];
-            var j = i - 1;
+            arry.push();
+            const temp = arry[i];
+            let j = i - 1;
             while (j >= 0 && arry[j] > temp) {
                 arry[j + 1] = arry[j];
                 j--;
@@ -73,18 +59,21 @@
     
         },
 
-        Shuffle(o) {
-            for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-            return o;
+        Shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
         },
         
         divClasses: function(value) {
             return {
            
-                width: '0.13em',
+                width: '2px',
                 height: `${value * .015}em`,
                 display: 'inline-block',
-                //border: ".03em solid black",        
+                //border: ".03em solid black",
                 backgroundColor: this.rainbowArray[value - 1],
                 //float: 'left',
                 verticalAlign: 'top',
@@ -95,16 +84,16 @@
         },
         createRainbowArray: function(array){
             for (let i = 0; i < array.length; i++) {
-                let red   = this.sin_to_hex(i, 0 * Math.PI * 2/3, array.length); // 0   deg
-                let blue  = this.sin_to_hex(i, 1 * Math.PI * 2/3, array.length); // 120 deg
+                let red   = this.sin_to_hex(i, 0 , array.length); // 0   deg
+                let blue  = this.sin_to_hex(i, Math.PI * 2/3, array.length); // 120 deg
                 let green = this.sin_to_hex(i, 2 * Math.PI * 2/3, array.length); // 240 deg
                 array[i] = "#"+ red + green + blue;
               }
         },
         sin_to_hex: function(i, phase, size) {
-            var sin = Math.sin(Math.PI / size * 2 * i + phase);
-            var int = Math.floor(sin * 127) + 128;
-            var hex = int.toString(16);
+            const sin = Math.sin(Math.PI / size * 2 * i + phase);
+            const int = Math.floor(sin * 127) + 128;
+            const hex = int.toString(16);
           
             return hex.length === 1 ? "0"+hex : hex;
         }

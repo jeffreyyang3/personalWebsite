@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-   <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About Me</router-link>
-      
-    </div> -->
-    
-    
-    
-    
+
     <homePage></homePage>
     <navBar></navBar>
     
@@ -37,6 +29,7 @@
 <style>
 body {
   background-color: #f6f6f6;
+
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -48,14 +41,9 @@ body {
   color: #2c3e50;
   
 }
-
 nav {
-
   padding-top: 20px;
-
-  
   clear: both;
-  
 }
 nav a {
   font-weight: bold;
@@ -75,13 +63,7 @@ nav a {
   margin-bottom: -.1em
 
 }
-.gdContent{
-  text-align: center;
-  font-size: 125%;
-  max-width: 60ch;
-  margin: 0 auto;
-  
-}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;
 }

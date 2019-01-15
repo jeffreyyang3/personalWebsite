@@ -21,8 +21,9 @@ export default {
         'About Me': ["For most of my life, I didn't see myself being \
         a programmer. Thankfully, I explored that possibility in college \
         and ended up really liking it. I was drawn to everything \
-        (besides some of the math) ",
-        "asdf"
+        (besides some of the math), the emphasis on the discrete, \
+         the hardware, and the low barrier of entry to creating, and more.",
+        "I've mainly only explored web development. but I'm open to "
         
         ]
 
