@@ -19,8 +19,8 @@ export default {
   data: function(){
     return {
       items:{
-        'About Me': "im jeffre aspiring swe",
-        'Experience': "leeps lab program man",
+        'card game':["im jeffre aspiring swe"],
+        'Experience': ["leeps lab program man"],
 
       }
       
