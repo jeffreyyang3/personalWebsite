@@ -9,36 +9,36 @@
 </template>
 
 <script>
-    export default {
-        name: "navBar",
-        props: {
-            currentPage: String
-        },
-        data: function() {
-            return {
-                internalLinks: {
-                 
-                    'About': 'about',
-                    'Projects': 'projects',
-                    
-                },
-                externalLinks: {
-                    'GitHub': 'https://github.com/jeffreyyang3',
-                    'LinkedIn': 'https://www.linkedin.com/in/jeffreyyang3/',
+export default {
+    name: "navBar",
+    props: {
+        currentPage: String
+    },
+    data: function() {
+        return {
+            internalLinks: {
 
-                }
+                'About': 'about',
+                'Projects': 'projects',
+
+            },
+            externalLinks: {
+                'GitHub': 'https://github.com/jeffreyyang3',
+                'LinkedIn': 'https://www.linkedin.com/in/jeffreyyang3/',
+
             }
-        },
-        computed: {
-            
-
-        },
-        mounted: function(){
-            // delete this.links[this.currentPage]
         }
+    },
+    computed: {
 
-       
-        
+
+    },
+    mounted: function(){
+        // delete this.links[this.currentPage]
     }
+
+
+
+}
 </script>
 

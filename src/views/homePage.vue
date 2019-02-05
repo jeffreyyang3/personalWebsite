@@ -117,7 +117,7 @@ export default {
     setTimeout(() => {
       this.insertionSort();
     }, 200);
-    console.log(this.getNumberBars())
+
   }
 };
 </script>
