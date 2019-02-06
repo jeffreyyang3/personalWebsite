@@ -47,7 +47,7 @@ export default {
       let width = window.innerWidth;
       let bars;
       if (height < width){
-          bars = width * .15;
+          bars = width * .11;
       }
       else{
           bars = width * .3;

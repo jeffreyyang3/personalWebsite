@@ -4,12 +4,16 @@
       <!--  <genericDesc v-for="(content, title) in items"
                      v-bind:key="title" :title="title" :content="content"/> -->
 
-        
-        <navBar :internalLinks="links" :internal="true"></navBar>
-        
-      <transition name="slide-fade">
-        <router-view/>
-      </transition>
+
+            <navBar :internalLinks="links" :internal="true"></navBar>
+
+        <transition name="modal">
+            <router-view/>
+        </transition>
+
+
+
+
         
     </div>
 </template>

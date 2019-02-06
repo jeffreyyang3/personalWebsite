@@ -1,11 +1,11 @@
 <template>
     <nav class="navBar" :style="getStyle(internal)">
-        <router-link v-for="(link,name) in internalLinks" 
-        v-bind:key="name" :to="link"> 
-        {{ name }}  </router-link> 
+        <router-link v-for="(link,name) in tempLinks"
+        :key="name" :to="link" @click.native="setLinks(name)">
+        {{ name }} </router-link>
         <span id="externalLinks" v-if="!internal">
             <a v-for="(link,name) in externalLinks"
-            v-bind:key="name" :href="link" target="_blank"> {{ name }} </a>
+            :key="name" :href="link" target="_blank"> {{ name }} </a>
         </span>
     </nav>
 </template>
@@ -18,8 +18,10 @@ export default {
         internalLinks: Object,
         internal: Boolean,
     },
+
     data: function() {
         return {
+
             
       
             externalLinks: {
@@ -28,9 +30,15 @@ export default {
 
             },
 
+            tempLinks: this.internalLinks,
+
+
+
             
         }
     },
+
+
 
    
     methods: {
@@ -41,7 +49,12 @@ export default {
                 }
             }
        
-        }
+        },
+
+        setLinks: function(current){
+            this.tempLinks = JSON.parse(JSON.stringify(this.internalLinks));
+            delete this.tempLinks[current]
+        },
 
 
     },
