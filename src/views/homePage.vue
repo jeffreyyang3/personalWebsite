@@ -28,12 +28,12 @@ export default {
         function timeoutSort(array, i) {
           if (i < array.length) {
             this.arrayStep(array, i);
-            setTimeout(timeoutSort.bind(this), 10, array, i + 1);
+            setTimeout(timeoutSort.bind(this), 20, array, i + 1);
           } else {
             this.sortDone = true;
           }
         }.bind(this),
-        10,
+        20,
         this.array,
         0
       );
@@ -47,7 +47,7 @@ export default {
       let width = window.innerWidth;
       let bars;
       if (height < width){
-          bars = width * .11;
+          bars = width * .15;
       }
       else{
           bars = width * .3;

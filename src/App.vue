@@ -2,11 +2,12 @@
     <div id="app">
 
         <homePage></homePage>
-        <navBar></navBar>
+        <navBar :internalLinks="links" :internal="false"></navBar>
 
         <transition name="slide-fade">
             <router-view/>
         </transition>
+        
 
     </div>
 </template>
@@ -20,7 +21,16 @@ export default {
   name: "app",
   components: {
     navBar,
-    homePage
+    homePage,
+  },
+  data: function() {
+    return{
+      links: {
+        'About Me': 'about',
+        'Projects': 'projects',
+      }
+    }
+    
   }
 };
 </script>

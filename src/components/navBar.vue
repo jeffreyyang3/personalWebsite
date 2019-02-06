@@ -1,10 +1,12 @@
 <template>
-    <nav class="navBar">
+    <nav class="navBar" :style="getStyle(internal)">
         <router-link v-for="(link,name) in internalLinks" 
         v-bind:key="name" :to="link"> 
         {{ name }}  </router-link> 
-        <a v-for="(link,name) in externalLinks" 
-        v-bind:key="name" :href="link" target="_blank"> {{ name }} </a>
+        <span id="externalLinks" v-if="!internal">
+            <a v-for="(link,name) in externalLinks"
+            v-bind:key="name" :href="link" target="_blank"> {{ name }} </a>
+        </span>
     </nav>
 </template>
 
@@ -12,24 +14,34 @@
 export default {
     name: "navBar",
     props: {
-        currentPage: String
+        currentPage: String,
+        internalLinks: Object,
+        internal: Boolean,
     },
     data: function() {
         return {
-            internalLinks: {
-
-                'About': 'about',
-                'Projects': 'projects',
-
-            },
+            
+      
             externalLinks: {
                 'GitHub': 'https://github.com/jeffreyyang3',
                 'LinkedIn': 'https://www.linkedin.com/in/jeffreyyang3/',
 
-            }
+            },
+
+            
         }
     },
-    computed: {
+
+   
+    methods: {
+        getStyle: function(internal){
+            if(internal){
+                return {
+                    fontSize: '78%'
+                }
+            }
+       
+        }
 
 
     },
@@ -41,4 +53,6 @@ export default {
 
 }
 </script>
+
+
 
