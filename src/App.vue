@@ -87,4 +87,25 @@ nav a {
   transform: translateX(10px);
   opacity: 0;
 }
+
+.card {
+  transition: all 0.5s;
+
+}
+.card-enter, .card-leave-to
+/* .card-leave-active for <2.1.8 */ {
+  opacity: 0;
+  transform: scale(0);
+}
+.card-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+.card-move {
+  opacity: 1;
+  transition: all 0.5s;
+}
 </style>

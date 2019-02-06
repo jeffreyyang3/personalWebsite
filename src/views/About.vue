@@ -7,7 +7,7 @@
 
             <navBar :internalLinks="links" :internal="true"></navBar>
 
-        <transition name="modal">
+        <transition name="slide-fade">
             <router-view/>
         </transition>
 

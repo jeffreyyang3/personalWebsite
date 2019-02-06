@@ -1,12 +1,17 @@
 <template>
     <nav class="navBar" :style="getStyle(internal)">
-        <router-link v-for="(link,name) in tempLinks"
-        :key="name" :to="link" @click.native="setLinks(name)">
-        {{ name }} </router-link>
+   <!--     <transition-group name="slide-fade"> -->
+        
+            <router-link v-for="(link,name) in tempLinks"
+            :key="link" :to="link" @click.native="setLinks(name)">
+            {{ name }} </router-link>
+            
+    <!--    </transition-group> -->
         <span id="externalLinks" v-if="!internal">
-            <a v-for="(link,name) in externalLinks"
-            :key="name" :href="link" target="_blank"> {{ name }} </a>
+                <a v-for="(link,name) in externalLinks"
+                :key="link" :href="link" target="_blank"> {{ name }} </a>
         </span>
+        
     </nav>
 </template>
 
@@ -22,8 +27,6 @@ export default {
     data: function() {
         return {
 
-            
-      
             externalLinks: {
                 'GitHub': 'https://github.com/jeffreyyang3',
                 'LinkedIn': 'https://www.linkedin.com/in/jeffreyyang3/',
@@ -32,15 +35,9 @@ export default {
 
             tempLinks: this.internalLinks,
 
-
-
-            
         }
     },
 
-
-
-   
     methods: {
         getStyle: function(internal){
             if(internal){
@@ -52,8 +49,9 @@ export default {
         },
 
         setLinks: function(current){
-            this.tempLinks = JSON.parse(JSON.stringify(this.internalLinks));
-            delete this.tempLinks[current]
+            this.intermediate = JSON.parse(JSON.stringify(this.internalLinks));
+            delete this.intermediate[current]
+            this.tempLinks = this.intermediate
         },
 
 
