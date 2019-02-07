@@ -6,6 +6,7 @@ import projects from "@/views/Projects.vue";
 import aboutMe from "@/views/AboutInternal/aboutMe.vue";
 import otherStuff from "@/views/AboutInternal/otherStuff.vue";
 import programming from "@/views/AboutInternal/programming.vue";
+import myWebsite from '@/views/ProjectInternal/myWebsite.vue'
 
 Vue.use(Router);
 
@@ -21,9 +22,9 @@ export default new Router({
       component: about,
       children: [
 
-        {path: '/aboutMe', component: aboutMe},
-        {path: '/otherStuff', name: "otherStuff", component: otherStuff},
-        {path: '/programming', name: "programming", component: programming},
+        {path: '/about/aboutMe', name: 'aboutMe' ,component: aboutMe},
+        {path: '/about/otherStuff', name: "otherStuff", component: otherStuff},
+        {path: '/about/programming', name: "programming", component: programming},
 
 
       ]
@@ -31,7 +32,11 @@ export default new Router({
     {
       path: "/projects",
       name: "projects",
-      component: projects
+      component: projects,
+      children: [
+        {path: '/projects/personalWebsite', name: 'personalWebsite' , component: myWebsite},
+        
+      ],
     }
   ]
 });

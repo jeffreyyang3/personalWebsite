@@ -26,8 +26,8 @@ export default {
   data: function() {
     return{
       links: {
-        'About Me': 'about',
-        'Projects': 'projects',
+        'About Me': '/about',
+        'Projects': '/projects',
       }
     }
     

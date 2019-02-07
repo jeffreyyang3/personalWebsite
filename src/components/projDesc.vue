@@ -3,7 +3,7 @@
 <template>
     <div class="projectDesc">
         <h2> {{ title }} </h2>
-        <img v-if="hasImage" :src="getImgUrl(path)" alt="image issue">
+        <img v-if="hasImage" :src="getImgUrl(path)" alt="supposed2be image here">
         <h4> Technologies used: {{ technologies }} </h4>
         <p v-for="par in description" :key="par"> {{ par }} </p>
         
@@ -22,15 +22,7 @@ export default {
         hasImage: Boolean,
     },
     methods: {
-        getImgUrl(fileName){
-            if(fileName === undefined){
-                return
-            }
-            else{
-                return require('@/assets/images/' + fileName);
-
-            }
-        },
+        getImgUrl(fileName){return require('@/assets/images/' + fileName)},
         
     },
 

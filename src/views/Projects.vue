@@ -5,6 +5,12 @@
         :technologies="data.technologies"
         :description="data.description" :path="data.path"/> -->
 
+    <navBar :internalLinks="links" :internal="true"></navBar>
+    <transition name="slide-fade">
+            <router-view/>
+    </transition>
+    
+
 
 
     </div>
@@ -13,34 +19,24 @@
 <script>
 // @ is an alias to /src  dfdf
 import projDesc from '@/components/projDesc.vue'
+import navBar from '@/components/navBar.vue'
 
 export default {
     name: 'projects',
     components: {
     projDesc,
+    navBar
 
 
     },
 
     data: function(){
         return {
-            items:{
-                "Personal Website": {
-                    technologies: "Vue: Single File Components, Router, \
-                    string test, HTML5 Canvas",
-                    description: ["this is my personal website"]
-                },
-
-                "Cards Against Humanity": {
-
-                  path: "cardsGif.gif",
-                  technologies: "Vue, Django (oTree)",
-                  description: ["example description", "paragraph"],
-
-                },
+            links: {
+                'My Website': '/projects/personalWebsite',
                 
+            },
 
-            }
 
         }
     },

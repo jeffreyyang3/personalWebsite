@@ -5,7 +5,7 @@
         <h1> Jeffrey Yang</h1> 
         <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
         <div id="sort">
-		<div v-bind:key="bar"
+    <div v-bind:key="bar"
              v-bind:style="divClasses(bar)"
              v-for="bar in array"> </div>
        </div>
@@ -28,12 +28,12 @@ export default {
         function timeoutSort(array, i) {
           if (i < array.length) {
             this.arrayStep(array, i);
-            setTimeout(timeoutSort.bind(this), 20, array, i + 1);
+            setTimeout(timeoutSort.bind(this), 35, array, i + 1);
           } else {
             this.sortDone = true;
           }
         }.bind(this),
-        20,
+        35,
         this.array,
         0
       );

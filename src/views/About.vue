@@ -31,9 +31,9 @@ export default {
     data: function() {
         return {
             links: {
-                'General': 'aboutMe',
-                'Programming': 'programming',
-                'Other Stuff': 'otherStuff',
+                'General': '/about/aboutMe',
+                'Programming': '/about/programming',
+                'Other Stuff': '/about/otherStuff',
             }
         }
     }
