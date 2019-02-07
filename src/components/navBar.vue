@@ -65,5 +65,11 @@ export default {
 }
 </script>
 
+<style scoped>
+.navBar {
+  width: max-content;
+  margin: auto;
+}
+</style>
 
 

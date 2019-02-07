@@ -69,6 +69,13 @@ nav a {
   margin-bottom: -0.1em;
 }
 
+.descContent{
+    text-align: center;
+    font-size: 120%;
+    max-width: 50ch;
+    margin: 0 auto;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s;
@@ -77,10 +84,13 @@ nav a {
   opacity: 0;
 }
 .slide-fade-enter-active {
-  transition: all 1s ease;
+  transition: transform 1s ease,
+    opacity 1s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+  position: absolute;
+  transition: transform 0.1s cubic-bezier(1, 0.5, 0.8, 1),
+    opacity 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
         /* .slide-fade-leave-active below version 2.1.8 */ {

@@ -39,3 +39,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+  .about {
+    margin: auto;
+    width: max-content;
+  }
+</style>

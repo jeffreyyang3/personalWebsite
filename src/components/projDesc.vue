@@ -3,7 +3,7 @@
 <template>
     <div class="projectDesc">
         <h2> {{ title }} </h2>
-        <img :src="getImgUrl(path)">
+        <img v-if="hasImage" :src="getImgUrl(path)" alt="image issue">
         <h4> Technologies used: {{ technologies }} </h4>
         <p v-for="par in description" :key="par"> {{ par }} </p>
         
@@ -19,6 +19,7 @@ export default {
         technologies: String,
         description: Array,
         path: String,
+        hasImage: Boolean,
     },
     methods: {
         getImgUrl(fileName){

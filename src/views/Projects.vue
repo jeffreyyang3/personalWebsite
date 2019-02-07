@@ -1,9 +1,11 @@
 <template>
     <div class="projects">
-        <projDesc v-for="(data, title) in items"
+     <!--   <projDesc v-for="(data, title) in items"
         :key="title" :title="title"
         :technologies="data.technologies"
-        :description="data.description" :path="data.path"/>
+        :description="data.description" :path="data.path"/> -->
+
+
 
     </div>
 </template>
@@ -30,7 +32,7 @@ export default {
                 },
 
                 "Cards Against Humanity": {
-                  
+
                   path: "cardsGif.gif",
                   technologies: "Vue, Django (oTree)",
                   description: ["example description", "paragraph"],

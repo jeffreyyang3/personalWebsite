@@ -1,8 +1,8 @@
 <template>
-    <div class="genericDesc">
-        <h1 class="gdHeading"> {{ title }} </h1>
+    <div class="desc">
+        <h1 class="descHeading"> {{ title }} </h1>
         <div v-for="par in content" v-bind:key="par" 
-        class="gdContent"> <p v-html="par"></p>  </div>
+        class="descContent"> <p v-html="par"></p>  </div>
         
     </div>
 </template>
@@ -18,13 +18,4 @@
        
     }
 </script>
-
-<style>
-    .gdContent{
-        text-align: center;
-        font-size: 120%;
-        max-width: 50ch;
-        margin: 0 auto;
-    }
-</style>
 
