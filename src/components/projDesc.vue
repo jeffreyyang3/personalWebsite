@@ -2,10 +2,17 @@
 
 <template>
     <div class="projectDesc">
-        <h2> {{ title }} </h2>
-        <img v-if="hasImage" :src="getImgUrl(path)" alt="supposed2be image here">
+        <h3> {{ title }} </h3>
+        <img v-if="hasImage" 
+        :src="getImgUrl(fileName)" 
+        alt="supposed2be image here">
         <h4> Technologies used: {{ technologies }} </h4>
-        <p v-for="par in description" :key="par"> {{ par }} </p>
+
+        <div v-for="par in description" :key="par"
+        class="descContent">
+            <p v-html="par"> </p> 
+        </div>
+                
         
 
     </div>
@@ -18,16 +25,19 @@ export default {
         title: String,
         technologies: String,
         description: Array,
-        path: String,
+        fileName: String,
         hasImage: Boolean,
     },
     methods: {
-        getImgUrl(fileName){return require('@/assets/images/' + fileName)},
+        getImgUrl: function(name){
+            if(this.hasImage){
+                return require('@/assets/images/' + name)
+            }
         
+        },
+
     },
-
 }
-
 </script>
 
 

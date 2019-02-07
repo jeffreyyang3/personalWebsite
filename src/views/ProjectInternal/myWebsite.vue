@@ -15,7 +15,13 @@
             return {
                 title: "Personal Website",
                 technologies: "Vue: Single File Components, Router",
-                description: ['paragraf 1', 'paragraf 2'],
+                description: [" Naturally, my first web project \
+                was my personal website. It's come a long way since \
+                (placeholder), although I guess that iteration had better\
+                performance than this one.    ", 
+                
+                
+                'paragraf 2'],
                 hasImage: false,
             }
         }

@@ -28,12 +28,12 @@ export default {
         function timeoutSort(array, i) {
           if (i < array.length) {
             this.arrayStep(array, i);
-            setTimeout(timeoutSort.bind(this), 35, array, i + 1);
+            setTimeout(timeoutSort.bind(this), 25, array, i + 1);
           } else {
             this.sortDone = true;
           }
         }.bind(this),
-        35,
+        25,
         this.array,
         0
       );

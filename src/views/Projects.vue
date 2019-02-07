@@ -5,10 +5,10 @@
         :technologies="data.technologies"
         :description="data.description" :path="data.path"/> -->
 
-    <navBar :internalLinks="links" :internal="true"></navBar>
-    <transition name="slide-fade">
-            <router-view/>
-    </transition>
+        <navBar :internalLinks="links" :internal="true"></navBar>
+        <transition name="slide-fade">
+                <router-view/>
+        </transition>
     
 
 
@@ -18,13 +18,11 @@
 
 <script>
 // @ is an alias to /src  dfdf
-import projDesc from '@/components/projDesc.vue'
 import navBar from '@/components/navBar.vue'
 
 export default {
     name: 'projects',
     components: {
-    projDesc,
     navBar
 
 
@@ -33,7 +31,8 @@ export default {
     data: function(){
         return {
             links: {
-                'My Website': '/projects/personalWebsite',
+                'Personal Website': '/projects/personalWebsite',
+                'Cards Against Humanity': '/projects/cardGame',
                 
             },
 

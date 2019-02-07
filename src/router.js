@@ -6,7 +6,8 @@ import projects from "@/views/Projects.vue";
 import aboutMe from "@/views/AboutInternal/aboutMe.vue";
 import otherStuff from "@/views/AboutInternal/otherStuff.vue";
 import programming from "@/views/AboutInternal/programming.vue";
-import myWebsite from '@/views/ProjectInternal/myWebsite.vue'
+import myWebsite from '@/views/ProjectInternal/myWebsite.vue';
+import cardGame from '@/views/ProjectInternal/cardGame.vue';
 
 Vue.use(Router);
 
@@ -22,9 +23,12 @@ export default new Router({
       component: about,
       children: [
 
-        {path: '/about/aboutMe', name: 'aboutMe' ,component: aboutMe},
-        {path: '/about/otherStuff', name: "otherStuff", component: otherStuff},
-        {path: '/about/programming', name: "programming", component: programming},
+        {path: '/about/aboutMe', name: 'aboutMe' ,
+            component: aboutMe},
+        {path: '/about/otherStuff', name: "otherStuff", 
+            component: otherStuff},
+        {path: '/about/programming', name: "programming", 
+            component: programming},
 
 
       ]
@@ -34,7 +38,10 @@ export default new Router({
       name: "projects",
       component: projects,
       children: [
-        {path: '/projects/personalWebsite', name: 'personalWebsite' , component: myWebsite},
+        {path: '/projects/personalWebsite', 
+            name: 'personalWebsite' , component: myWebsite},
+        {path: '/projects/cardGame', name: 'cardGame', 
+            component: cardGame},
         
       ],
     }
