@@ -1,0 +1,26 @@
+body {
+	font-family: arial;
+	background: #D3D3D3;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h4{
+	color:green;
+	border: 5px dashed black;
+
+}
+
+li{
+	border: 2px solid blue;
+	color: white;
+}
+#special {
+	color:white;
+}
+#dankman {
+	color:black  ;
+}
+.twothree{
+	text-decoration: line-through;
+}
