@@ -1,7 +1,7 @@
 <template>
     <nav class="navBar" :style="getStyle(internal)">
    <!--     <transition-group name="slide-fade"> -->
-        
+        <a v-if="hasTitle"><strong>{{ title }}</strong>  </a>
             <router-link v-for="(link,name) in tempLinks"
             :key="link" :to="link" @click.native="setLinks(name)">
             {{ name }} </router-link>
@@ -22,6 +22,9 @@ export default {
         currentPage: String,
         internalLinks: Object,
         internal: Boolean,
+        hasTitle: Boolean,
+        title: String,
+        
     },
 
     data: function() {

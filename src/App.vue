@@ -1,15 +1,12 @@
 <template>
-    <div id="app">
+  <div id="app">
+    <homePage></homePage>
+    <navBar :internalLinks="links" :internal="false"></navBar>
 
-        <homePage></homePage>
-        <navBar :internalLinks="links" :internal="false"></navBar>
-
-        <transition name="slide-fade">
-            <router-view/>
-        </transition>
-        
-
-    </div>
+    <transition name="slide-fade">
+      <router-view/>
+    </transition>
+  </div>
 </template>
 
 
@@ -21,16 +18,15 @@ export default {
   name: "app",
   components: {
     navBar,
-    homePage,
+    homePage
   },
   data: function() {
-    return{
+    return {
       links: {
-        'About Me': '/about',
-        'Projects': '/projects',
+        "About Me": "/about",
+        Projects: "/projects"
       }
-    }
-    
+    };
   }
 };
 </script>
@@ -69,11 +65,11 @@ nav a {
   margin-bottom: -0.1em;
 }
 
-.descContent{
-    text-align: center;
-    font-size: 120%;
-    max-width: 50ch;
-    margin: 0 auto;
+.descContent {
+  text-align: center;
+  font-size: 120%;
+  max-width: 50ch;
+  margin: 0 auto;
 }
 
 .fade-enter-active,
@@ -84,8 +80,7 @@ nav a {
   opacity: 0;
 }
 .slide-fade-enter-active {
-  transition: transform 1s ease,
-    opacity 1s ease;
+  transition: transform 1s ease, opacity 1s ease;
 }
 .slide-fade-leave-active {
   position: absolute;
@@ -100,7 +95,6 @@ nav a {
 
 .card {
   transition: all 0.5s;
-
 }
 .card-enter, .card-leave-to
 /* .card-leave-active for <2.1.8 */ {
@@ -111,8 +105,6 @@ nav a {
   opacity: 1;
   transform: scale(1);
 }
-
-
 
 .card-move {
   opacity: 1;

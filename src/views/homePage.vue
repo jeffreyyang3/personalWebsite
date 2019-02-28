@@ -1,17 +1,76 @@
 // project description
 
 <template>
-    <div id="homePage">
-        <h1> Jeffrey Yang</h1> 
-        <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
-        <div id="sort">
-            <div v-bind:key="bar"
-                v-bind:style="divClasses(bar)"
-                v-for="bar in array"> 
-            </div>
-        </div>
+  <div id="homePage">
+    <h1>Jeffrey Yang</h1>
+    <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
+    <div id="sort">
+      <div v-bind:key="bar" v-bind:style="divClasses(bar)" v-for="bar in array"></div>
     </div>
+
+    <input type="range" min="20" max="260" v-model="delay" class="slider" id="myRange">
+    <h3>
+      Delay per step: {{ delay }} ms
+      <button @click="resetSort()">Reset</button>
+    </h3>
+
+    <div></div>
+  </div>
 </template>
+
+<style>
+button {
+  border-radius: 2em;
+  display: inline-block;
+  color: #fff;
+  background-color: #4fc08d;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  min-width: 6em;
+  text-align: center;
+  vertical-align: top;
+  margin-left: 10px;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d0d0d0;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 20px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4fc08d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+</style>
+
 
 <script>
 export default {
@@ -20,7 +79,8 @@ export default {
     return {
       array: [],
       upper: 0,
-      sortDone: false
+      sortDone: false,
+      delay: 40
     };
   },
   methods: {
@@ -29,12 +89,12 @@ export default {
         function timeoutSort(array, i) {
           if (i < array.length) {
             this.arrayStep(array, i);
-            setTimeout(timeoutSort.bind(this), 25, array, i + 1);
+            setTimeout(timeoutSort.bind(this), this.delay, array, i + 1);
           } else {
             this.sortDone = true;
           }
         }.bind(this),
-        25,
+        this.delay,
         this.array,
         0
       );
@@ -47,13 +107,12 @@ export default {
       let height = window.innerHeight;
       let width = window.innerWidth;
       let bars;
-      if (height < width){
-          bars = width * .11;
+      if (height < width) {
+        bars = width * 0.13;
+      } else {
+        bars = width * 0.3;
       }
-      else{
-          bars = width * .3;
-      }
-      return Math.floor(bars)
+      return Math.floor(bars);
     },
 
     createArray: function(arraySize) {
@@ -109,16 +168,16 @@ export default {
       const hex = int.toString(16);
 
       return hex.length === 1 ? "0" + hex : hex;
+    },
+    resetSort: function() {
+      this.createArray(this.getNumberBars());
+      this.rainbowArray = new Array(this.array.length);
+      this.createRainbowArray(this.rainbowArray);
+      this.insertionSort();
     }
   },
   mounted() {
-    this.createArray(this.getNumberBars());
-    this.rainbowArray = new Array(this.array.length);
-    this.createRainbowArray(this.rainbowArray);
-    setTimeout(() => {
-      this.insertionSort();
-    }, 200);
-
+    this.resetSort();
   }
 };
 </script>
