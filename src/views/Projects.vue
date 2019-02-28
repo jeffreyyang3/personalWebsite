@@ -25,7 +25,8 @@ export default {
     return {
       links: {
         "Personal Website": "/projects/personalWebsite",
-        "Cards Against Humanity": "/projects/cardGame"
+        "Cards Against Humanity": "/projects/cardGame",
+        "Reddit CLI": "/projects/redditScript"
       },
       title: "Projects:"
     };

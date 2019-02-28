@@ -5,6 +5,7 @@
     :description="description"
     :hasImage="true"
     :fileName="fileName"
+    :hasBorder="true"
   ></projDesc>
 </template>
 

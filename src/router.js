@@ -8,7 +8,7 @@ import otherStuff from "@/views/AboutInternal/otherStuff.vue";
 import programming from "@/views/AboutInternal/programming.vue";
 import myWebsite from "@/views/ProjectInternal/myWebsite.vue";
 import cardGame from "@/views/ProjectInternal/cardGame.vue";
-
+import redditScript from "@/views/ProjectInternal/redditScript.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -44,7 +44,8 @@ export default new Router({
           name: "personalWebsite",
           component: myWebsite
         },
-        { path: "/projects/cardGame", name: "cardGame", component: cardGame }
+        { path: "/projects/cardGame", name: "cardGame", component: cardGame },
+        { path: "/projects/redditScript", name: "redditScript", component: redditScript}
       ]
     }
   ]

@@ -54,6 +54,13 @@ nav a {
   text-decoration: none;
   padding: 10px;
   font-size: 150%;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #4fc08d;
 }
 
 #homePage > h1 {

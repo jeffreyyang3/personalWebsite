@@ -4,6 +4,8 @@
     :technologies="technologies"
     :description="description"
     :hasImage="hasImage"
+    :fileName="fileName"
+    :hasBorder="hasBorder"
   ></projDesc>
 </template>
 
@@ -34,26 +36,14 @@ export default {
                 visualize insertion sort under my name. It's an array of \
                 numbers represented as HTML divs, using setTimeout to pause \
                 the sort after each step so that the array doesn't get \
-                sorted too quickly.",
-        "N<sup>2</sup> runtime is still basically \
-                instant on a small array, but with a delay on \
-                each step one can \
-                see how quickly that time scales up with slightly longer \
-                delays."
+                sorted too quickly."
       ],
-      hasImage: false
+      hasImage: true,
+      hasBorder: false,
+      fileName: "vue.png"
     };
   }
 };
-
-/*
-        title: String,
-        technologies: String,
-        description: Array,
-        path: String,
-        hasImage: Boolean,
-
-    */
 </script>
 
 <style scoped>

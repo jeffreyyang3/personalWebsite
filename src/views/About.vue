@@ -2,7 +2,7 @@
   <div class="about">
     <!--  <genericDesc v-for="(content, title) in items"
     v-bind:key="title" :title="title" :content="content"/>-->
-    <navBar :internalLinks="links" :internal="true"></navBar>
+    <navBar :internalLinks="links" :internal="true" :hasTitle="hasTitle" :title="title"></navBar>
 
     <transition name="slide-fade">
       <router-view/>
@@ -17,6 +17,7 @@ import navBar from "@/components/navBar.vue";
 
 export default {
   name: "about",
+
   components: {
     navBar
   },
@@ -26,7 +27,9 @@ export default {
         General: "/about/aboutMe",
         Programming: "/about/programming",
         "Other Stuff": "/about/otherStuff"
-      }
+      },
+      title: "About Me:",
+      hasTitle: true
     };
   }
 };

@@ -8,17 +8,30 @@
       <div v-bind:key="bar" v-bind:style="divClasses(bar)" v-for="bar in array"></div>
     </div>
 
-    <input type="range" min="20" max="260" v-model="delay" class="slider" id="myRange">
-    <h3>
-      Delay per step: {{ delay }} ms
-      <button @click="resetSort()">Reset</button>
-    </h3>
-
-    <div></div>
+    <input type="range" min="20" max="100" v-model="delay" class="slider" id="myRange">
+    <br>
+    <h3 style="display: inline-block">Delay per step: {{ delay }} ms</h3>
+    <div id="resetButton" @click="resetSort">Reset</div>
   </div>
 </template>
 
 <style>
+#resetButton {
+  border-radius: 0.3em;
+  display: inline;
+  background: #4fc08d;
+  padding: 0.35em 0.7em;
+  margin-left: 0.6em;
+  font-weight: bold;
+  border: 1px solid #4fc08d;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#resetButton:hover {
+  background: #f6f6f6;
+}
 button {
   border-radius: 2em;
   display: inline-block;
@@ -28,7 +41,7 @@ button {
   box-sizing: border-box;
   border: 1px solid #4fc08d;
   font-size: 0.9em;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
   min-width: 6em;
   text-align: center;
@@ -108,7 +121,7 @@ export default {
       let width = window.innerWidth;
       let bars;
       if (height < width) {
-        bars = width * 0.13;
+        bars = width * 0.11;
       } else {
         bars = width * 0.3;
       }
