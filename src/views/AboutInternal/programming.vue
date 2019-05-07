@@ -30,8 +30,7 @@ export default {
                     economics games for universities.",
 
         "On the programming front, I've mostly tried to learn \
-                    full stack web development, with Vue/React,\
-                    Node/Django, and Mongo/Postgres. I really enjoy web development, but \
+                    full stack web development, but \
                     I'm also open to exploring any other avenues. I'm confident \
                     that I'll be able to pick them up quickly."
       ]

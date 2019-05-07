@@ -6,7 +6,7 @@
     :hasImage="hasImage"
     :fileName="fileName"
     :hasBorder="hasBorder"
-    :hasLink="hasLink"
+    :link="link"
   ></projDesc>
 </template>
 
@@ -42,7 +42,9 @@ export default {
       hasImage: true,
       hasBorder: false,
       fileName: "vue.png",
-      hasLink: false
+      link: {
+        hasLink: false
+      }
     };
   }
 };
