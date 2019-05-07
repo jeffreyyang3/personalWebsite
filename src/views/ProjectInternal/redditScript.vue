@@ -5,8 +5,6 @@
     :description="description"
     :hasImage="true"
     :fileName="fileName"
-    :hasBorder="true"
-    :hasLink="true"
     :link="link"
   ></projDesc>
 </template>
@@ -34,7 +32,12 @@ export default {
         and properly indent comments.`
       ],
       fileName: "redditGif.gif",
-      link: "https://github.com/jeffreyyang3/redditScript"
+
+      link: {
+        hasLink: true,
+        link: "https://github.com/jeffreyyang3/redditScript",
+        linkName: "GitHub"
+      }
     };
   }
 

@@ -15,7 +15,7 @@ import projDesc from "@/components/projDesc.vue";
 export default {
   name: "myWebsite",
   components: { projDesc },
-  data: function() {
+  data() {
     return {
       title: "Personal Website",
       technologies: "Vue: Single File Components, Router",

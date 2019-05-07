@@ -6,6 +6,7 @@
     :hasImage="true"
     :fileName="fileName"
     :hasBorder="true"
+    :link="link"
   ></projDesc>
 </template>
 
@@ -32,7 +33,12 @@ export default {
             shows dummy text for the cards since some of the cards
             aren't safe for work.`
       ],
-      fileName: "cardsGif.gif"
+      fileName: "cardsGif.gif",
+      link: {
+        hasLink: true,
+        link: "https://desolate-woodland-61499.herokuapp.com/demo/",
+        linkName: "Heroku"
+      }
     };
   }
 

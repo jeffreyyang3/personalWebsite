@@ -4,7 +4,10 @@
   <div class="projectDesc">
     <h3>
       {{ title }}
-      <a v-if="hasLink" href="link" target="_blank">Link</a>
+      <a v-if="link.hasLink" :href="link.link" target="_blank">
+        -
+        <span>{{link.linkName}}</span>
+      </a>
     </h3>
     <img
       v-if="hasImage"
@@ -30,8 +33,7 @@ export default {
     fileName: String,
     hasImage: Boolean,
     hasBorder: Boolean,
-    hasLink: Boolean,
-    link: String
+    link: Object
   },
 
   methods: {
@@ -61,6 +63,9 @@ export default {
 <style scoped>
 .projectDesc {
   width: 100%;
+}
+a:-webkit-any-link {
+  text-decoration: none;
 }
 img {
   max-height: 550px;
