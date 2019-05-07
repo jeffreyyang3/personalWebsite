@@ -6,6 +6,8 @@
     :hasImage="true"
     :fileName="fileName"
     :hasBorder="true"
+    :hasLink="true"
+    :link="link"
   ></projDesc>
 </template>
 
@@ -31,7 +33,8 @@ export default {
         setting. The script uses a simple recursive procedure to display
         and properly indent comments.`
       ],
-      fileName: "redditGif.gif"
+      fileName: "redditGif.gif",
+      link: "https://github.com/jeffreyyang3/redditScript"
     };
   }
 

@@ -6,6 +6,7 @@
     :hasImage="hasImage"
     :fileName="fileName"
     :hasBorder="hasBorder"
+    :hasLink="hasLink"
   ></projDesc>
 </template>
 
@@ -27,7 +28,7 @@ export default {
           ", although I guess that iteration had better\
                 performance than this one. My GPA was also better back then.\
                 Maybe I should have kept my website like that. Sadly, it's \
-                too late for that now. I put too much time into changing it. \
+                too late for that now. I've alraedy put too much time into changing my website. \
                 What are sunk costs?",
 
         "This website is now a single-page Vue application written \
@@ -40,7 +41,8 @@ export default {
       ],
       hasImage: true,
       hasBorder: false,
-      fileName: "vue.png"
+      fileName: "vue.png",
+      hasLink: false
     };
   }
 };

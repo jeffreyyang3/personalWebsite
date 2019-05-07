@@ -40,3 +40,10 @@ description: String,
 url: String,
 path: String, */
 </script>
+
+<style scoped>
+.projects {
+  width: 100%;
+}
+</style>
+

@@ -16,7 +16,7 @@ export default {
   components: {
     projDesc
   },
-  data: function() {
+  data() {
     return {
       title: "Cards Against Humanity",
       technologies: "Vue, Django (oTree)",

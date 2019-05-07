@@ -2,7 +2,10 @@
 
 <template>
   <div class="projectDesc">
-    <h3>{{ title }}</h3>
+    <h3>
+      {{ title }}
+      <a v-if="hasLink" href="link" target="_blank">Link</a>
+    </h3>
     <img
       v-if="hasImage"
       :src="getImgUrl(fileName)"
@@ -26,7 +29,9 @@ export default {
     description: Array,
     fileName: String,
     hasImage: Boolean,
-    hasBorder: Boolean
+    hasBorder: Boolean,
+    hasLink: Boolean,
+    link: String
   },
 
   methods: {
@@ -54,6 +59,9 @@ export default {
 
 
 <style scoped>
+.projectDesc {
+  width: 100%;
+}
 img {
   max-height: 550px;
   max-width: 550px;

@@ -37,7 +37,6 @@ export default {
 
 <style scoped>
 .about {
-  margin: auto;
-  width: max-content;
+  width: 100%;
 }
 </style>

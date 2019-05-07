@@ -8,7 +8,20 @@
       <div v-bind:key="bar" v-bind:style="divClasses(bar)" v-for="bar in array"></div>
     </div>
 
-    <input type="range" min="20" max="100" v-model="delay" class="slider" id="myRange">
+
+
+
+
+
+
+
+
+
+
+
+
+    <input type="range" min="20" max="100" v-model="delay" 
+    class="slider" id="myRange">
     <br>
     <h3 style="display: inline-block">Delay per step: {{ delay }} ms</h3>
     <div id="resetButton" @click="resetSort">Reset</div>
