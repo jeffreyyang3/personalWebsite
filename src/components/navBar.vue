@@ -32,6 +32,7 @@ export default {
   data: function() {
     return {
       externalLinks: {
+        Resume: "./resume_jeffreyYang.pdf",
         GitHub: "https://github.com/jeffreyyang3",
         LinkedIn: "https://www.linkedin.com/in/jeffreyyang3/"
       },

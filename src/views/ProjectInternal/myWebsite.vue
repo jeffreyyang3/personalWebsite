@@ -43,7 +43,9 @@ export default {
       hasBorder: false,
       fileName: "vue.png",
       link: {
-        hasLink: false
+        hasLink: true,
+        linkName: "GitHub",
+        link: "https://github.com/jeffreyyang3/personalwebsite"
       }
     };
   }
