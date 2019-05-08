@@ -67,6 +67,12 @@ export default {
   width: max-content;
   margin: auto;
 }
+
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+  }
+}
 </style>
 
 

@@ -64,12 +64,21 @@ nav a:hover {
 }
 
 #homePage > h1 {
-  font-size: 500%;
+  font-size: 400%;
   margin-bottom: 0.2em;
 }
 #homePage > h2 {
   font-size: 180%;
   margin-bottom: -0.1em;
+}
+
+@media (max-width: 600px) {
+  #homePage > h1 {
+    font-size: 300%;
+  }
+  #homePage > h2 {
+    font-size: 140%;
+  }
 }
 
 .descContent {
