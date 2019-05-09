@@ -4,17 +4,17 @@
     <a v-if="hasTitle">
       <strong>{{ title }}</strong>
     </a>
+
+    <!--    </transition-group> -->
+    <span id="externalLinks" v-if="!internal">
+      <a v-for="(link,name) in externalLinks" :key="link" :href="link" target="_blank">{{ name }}</a>
+    </span>
     <router-link
       v-for="(link,name) in tempLinks"
       :key="link"
       :to="link"
       @click.native="setLinks(name)"
     >{{ name }}</router-link>
-
-    <!--    </transition-group> -->
-    <span id="externalLinks" v-if="!internal">
-      <a v-for="(link,name) in externalLinks" :key="link" :href="link" target="_blank">{{ name }}</a>
-    </span>
   </nav>
 </template>
 
