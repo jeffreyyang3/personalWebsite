@@ -26,7 +26,7 @@ export default {
         "My favorite part of CS/programming is the ease of \
                     creating relative to many other fields. This website \
                      aims to display some projects I've made to try to \
-                      take advantage of that, as well as to also give you\
+                      take advantage of that, as well as to give you\
                     a bit of a look into my life."
       ]
     };

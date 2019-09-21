@@ -24,8 +24,8 @@ export default {
           ", a company that, among other things, makes multiplayer \
                     economics games for universities. I spent my summer \
                     updating the results view for their many games with \
-                    a new design language and replacing the their with \
-                    Highcharts on a large. I worked with a  6+ year old Dojo.js codebase.\
+                    a new design language and replacing the charts with \
+                    Highcharts. I worked with a  6+ year old Dojo.js codebase.\
                     Through it, I learned a lot about the lower level DOM \
                     scripting we take for granted with modern JS\
                     frameworks, the power of modern CSS, version control/issue tracking with an Agile \
