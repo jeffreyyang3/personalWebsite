@@ -26,7 +26,7 @@ export default {
         `I also really like JavaScript. People hate on it a lot, but I think modern
          language features and innovative new community developments have helped it
          shed a lot of the bad parts that come with the language previously only running on
-         low tech web browsers. I've also found the general style of the language
+         low tech web browsers. I've found the general style of the language
          fun and intuitive to use, especially the emphasis on functions.`,
         "While I've put basically all of my time so far into learning \
          web development, I'm open to exploring other avenues as well. \
