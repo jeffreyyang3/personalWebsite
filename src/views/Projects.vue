@@ -6,7 +6,7 @@
     :description="data.description" :path="data.path"/>-->
     <navBar :internalLinks="links" :internal="true" :hasTitle="true" :title="title"></navBar>
     <transition name="slide-fade">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
   data: function() {
     return {
       links: {
+        "comparecards4.me": "/projects/compareCards",
         "Personal Website": "/projects/personalWebsite",
         "Cards Against Humanity": "/projects/cardGame",
         "Reddit CLI": "/projects/redditScript"

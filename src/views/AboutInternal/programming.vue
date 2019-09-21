@@ -17,22 +17,20 @@ export default {
     return {
       title: "Programming",
       content: [
-        "I currently work as a programmer for UCSC's LEEPS\
-                    (Learning and Experimental Economics Projects) Lab,\
-                    where I write Django-based multiplayer web games\
-                    that economics researchers use to conduct research on\
-                    on human decision making processes.",
-        "This summer, I'll be a software engineering intern at " +
-          "MobLab"
-            .link("https://moblab.com")
-            .replace(/^<a/, '$& target="_blank"') +
-          ", a company that conveniently also makes multiplayer \
-                    economics games for universities.",
-
-        "On the programming front, I've mostly tried to learn \
-                    full stack web development, but \
-                    I'm also open to exploring any other avenues. I'm confident \
-                    that I'll be able to pick them up quickly."
+        `On my own, I've been trying to learn full stack development.
+         I know, real unique. But it's popular for many good reasons.
+         For me, I enjoy web a lot because the speed at which you can
+         make something cool that also looks nice is unmatched in most cases
+         when comparing it to other languages, frameworks and runtimes. 
+         `,
+        `I also really like JavaScript. People hate on it a lot, but I think modern
+         language features and innovative new community developments have helped it
+         shed a lot of the bad parts that come with the language previously only running on
+         low tech web browsers. I've also found the general style of the language
+         fun and intuitive to use, especially the emphasis on functions.`,
+        "While I've put basically all of my time so far into learning \
+         web development, I'm open to exploring other avenues as well. \
+         I'm confident I'll be able to pick them up quickly."
       ]
     };
   }

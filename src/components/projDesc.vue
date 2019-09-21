@@ -3,7 +3,7 @@
 <template>
   <div class="projectDesc">
     <h3>
-      {{ title }}
+      <span v-html="title"></span>
       <a v-if="link.hasLink" :href="link.link" target="_blank">
         -
         <span>{{link.linkName}}</span>
@@ -14,11 +14,11 @@
       :src="getImgUrl(fileName)"
       alt="supposed2be image here"
       :style="getImgStyle()"
-    >
-    <h4>Technologies used: {{ technologies }}</h4>
+    />
+    <h4>Technologies: {{ technologies }}</h4>
 
     <div v-for="par in description" :key="par" class="descContent">
-      <p v-html="par"/>
+      <p v-html="par" />
     </div>
   </div>
 </template>
@@ -44,8 +44,8 @@ export default {
     },
     getImgStyle: function() {
       let base = {
-        maxHeight: "550px",
-        maxWidth: "550px",
+        maxHeight: "680px",
+        maxWidth: "680px",
         borderRadius: "4px",
         border: "none"
       };
@@ -60,14 +60,25 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .projectDesc {
   width: 100%;
+}
+
+.projectDesc .websiteLink {
+  color: inherit;
+}
+
+.websiteLink:hover {
+  color: blue;
 }
 a:-webkit-any-link {
   text-decoration: none;
 }
-img {
+a.button:visited {
+  text-decoration: none;
+}
+.projectDesc img {
   max-height: 550px;
   max-width: 550px;
   border-radius: 4px;

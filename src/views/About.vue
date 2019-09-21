@@ -5,7 +5,7 @@
     <navBar :internalLinks="links" :internal="true" :hasTitle="hasTitle" :title="title"></navBar>
 
     <transition name="slide-fade">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
       links: {
         General: "/about/aboutMe",
         Programming: "/about/programming",
+        "Work Experience": "/about/work",
         "Other Stuff": "/about/otherStuff"
       },
       title: "About Me:",

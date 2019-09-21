@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       title: "Cards Against Humanity",
-      technologies: "Vue, Django (oTree)",
+      technologies: "Vue, Django",
       description: [
         `A card game heavily based on "Cards Against
             Humanity". I used a Django-based framework called oTree that 

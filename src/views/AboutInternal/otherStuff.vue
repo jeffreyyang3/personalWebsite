@@ -23,9 +23,7 @@ export default {
                     much more into playing the electric guitar and bass lately. \
                     I appreciate all types of music, classical, country, rock, \
                     metal, rap, and more, although I still have yet to get \
-                    into the " +
-          "very".bold() +
-          " heavy metal."
+                    into the really heavy metal."
       ]
     };
   }

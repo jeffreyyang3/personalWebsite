@@ -5,10 +5,14 @@ import about from "@/views/About.vue";
 import projects from "@/views/Projects.vue";
 import aboutMe from "@/views/AboutInternal/aboutMe.vue";
 import otherStuff from "@/views/AboutInternal/otherStuff.vue";
+import work from "@/views/AboutInternal/work.vue";
+
 import programming from "@/views/AboutInternal/programming.vue";
 import myWebsite from "@/views/ProjectInternal/myWebsite.vue";
 import cardGame from "@/views/ProjectInternal/cardGame.vue";
 import redditScript from "@/views/ProjectInternal/redditScript.vue";
+
+import compareCards from "@/views/ProjectInternal/compareCards.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -28,6 +32,11 @@ export default new Router({
           component: otherStuff
         },
         {
+          path: "/about/work",
+          name: "work",
+          component: work
+        },
+        {
           path: "/about/programming",
           name: "programming",
           component: programming
@@ -44,8 +53,18 @@ export default new Router({
           name: "personalWebsite",
           component: myWebsite
         },
+
+        {
+          path: "/projects/compareCards",
+          name: "compareCards",
+          component: compareCards
+        },
         { path: "/projects/cardGame", name: "cardGame", component: cardGame },
-        { path: "/projects/redditScript", name: "redditScript", component: redditScript}
+        {
+          path: "/projects/redditScript",
+          name: "redditScript",
+          component: redditScript
+        }
       ]
     }
   ]
