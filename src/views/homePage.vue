@@ -3,19 +3,45 @@
 <template>
   <div id="homePage">
     <h1>Jeffrey Yang</h1>
+    <div class="center">
+      <!-- <QuickSort /> -->
+      <MergeSort ref="ms" v-if="selectedSort === 'Merge Sort'" />
+      <QuickSort ref="qs" v-else :numBars="arrayLength" />
+      <div class="sliderContainer" ref="arrayLengthMod">
+        <input type="range" class="slider" min="70" max="200" v-model.number="arrayLength" />
+        <div class="sliderDesc">{{arrayLength}}</div>
+      </div>
+    </div>
+    <select class="sortSelector" v-model="selectedSort">
+      <option value="Merge Sort">Merge Sort</option>
+      <option value="Quicksort">Quicksort</option>
+    </select>
     <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
-    <div id="sort">
+    <!-- <div id="sort">
       <div v-bind:key="bar" v-bind:style="divClasses(bar)" v-for="bar in array"></div>
     </div>
-
-    <input type="range" min="20" max="100" v-model="delay" class="slider" id="myRange">
-    <br>
+    <input type="range" min="20" max="100" v-model="delay" class="slider" id="myRange" />
+    <br />
     <h3 style="display: inline-block">Delay per step: {{ delay }} ms</h3>
-    <div id="resetButton" @click="resetSort">Reset</div>
+    <div id="resetButton" @click="resetSort">Reset</div>-->
   </div>
 </template>
 
 <style>
+.sortSelector {
+  width: 10em;
+}
+.center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.center .sortContainer {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
 #resetButton {
   border-radius: 0.3em;
   display: inline;
@@ -84,16 +110,24 @@ button {
 }
 </style>
 
-
 <script>
+import QuickSort from "@/components/QuickSort";
+
+import MergeSort from "@/components/MergeSort";
 export default {
   name: "homePage",
+  components: {
+    QuickSort,
+    MergeSort
+  },
   data: function() {
     return {
       array: [],
       upper: 0,
       sortDone: false,
-      delay: 40
+      delay: 40,
+      selectedSort: "Quicksort",
+      arrayLength: 90
     };
   },
   methods: {
@@ -190,7 +224,7 @@ export default {
     }
   },
   mounted() {
-    this.resetSort();
+    // this.resetSort();
   }
 };
 </script>

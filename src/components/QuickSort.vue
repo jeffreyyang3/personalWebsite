@@ -1,18 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="sortContainer">
     <div class="barContainer">
-      <div
-        class="bar"
-        v-for="bar in bars"
-        :key="bar"
-        :style="getStyle(bar)"
-      ></div>
+      <div class="bar" v-for="bar in bars" :key="bar" :style="getStyle(bar)"></div>
     </div>
-    <h1>{{ resetAllowed }}</h1>
-    <input type="range" v-model="delay" />
-
-    <button id="reset" @click="doQs">quicksort</button>
-    <button>merge sort</button>
   </div>
 </template>
 <style lang="scss">
@@ -23,9 +13,8 @@
 </style>
 
 <script>
-import utils from "./utils.js";
 export default {
-  name: "HelloWorld",
+  name: "QuickSort",
   props: {
     msg: String
   },
@@ -33,14 +22,13 @@ export default {
     doQs() {
       this.shuffle(this.bars);
       this.quickSort(0, this.bars.length - 1);
-      console.log("called");
     },
     getStyle(num) {
       return {
         width: "5px",
         backgroundColor: this.rainbowArray[num],
         marginBottom: "10px",
-        height: num + "px"
+        height: `${Math.floor(num * 0.7)}px`
       };
     },
     shuffle(a) {
@@ -65,12 +53,10 @@ export default {
           // document.getElementById("reset").removeEventListener(cancel);
           reject();
         };
-        document.getElementById("reset").addEventListener("click", cancel);
 
         setTimeout(() => {
           this.swap(i, j);
 
-          document.getElementById("reset").removeEventListener("click", cancel);
           resolve();
         }, this.delay);
       });
@@ -113,15 +99,19 @@ export default {
       const int = Math.floor(sin * 127) + 128;
       const hex = int.toString(16);
       return hex.length === 1 ? "0" + hex : hex;
+    },
+    getBars: function() {
+      return this.shuffle(
+        [...new Array(this.numBars ? this.numBars : 100)].map(
+          (_, index) => index
+        )
+      );
     }
   },
 
-  async mounted() {
+  mounted() {
     // await this.partition(0, this.bars.length - 1);
-    console.log(utils);
-    utils.hello();
-    await this.quickSort(0, this.bars.length - 1);
-    this.resetAllowed = true;
+    this.quickSort(0, this.bars.length - 1);
 
     // const promise = new Promise(function(resolve) {
     //   setTimeout(() => resolve("done"), 1000);
@@ -132,10 +122,13 @@ export default {
     //   this.swap(0, this.bars.length - 1);
     // });
   },
+  props: {
+    numBars: Number
+  },
   data: function() {
     return {
-      bars: this.shuffle([...new Array(90)].map((_, index) => index)),
-      rainbowArray: this.createRainbowArray([...new Array(90)]),
+      bars: this.getBars(),
+      rainbowArray: this.createRainbowArray([...new Array(this.numBars)]),
       delay: 20,
       resetAllowed: false
     };

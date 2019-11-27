@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="sortContainer">
     <div class="barContainer">
       <div
         class="bar"
@@ -8,10 +8,6 @@
         :style="getStyle(bar)"
       ></div>
     </div>
-    <h1>{{ resetAllowed }}</h1>
-    <input type="range" v-model="delay" />
-
-    <button>merge sort</button>
   </div>
 </template>
 <style lang="scss">
@@ -22,9 +18,8 @@
 </style>
 
 <script>
-const utils = require("./utils");
 export default {
-  name: "HelloWorld",
+  name: "MergeSort",
   props: {
     msg: String
   },
@@ -62,13 +57,18 @@ export default {
       }
 
       for (let i = 0; i < out.length; i++) {
-        const promise = new Promise(resolve => {
-          setTimeout(() => {
-            this.$set(this.bars, start + i, out[i]);
-            resolve();
-          }, 15);
-        });
-        await promise;
+        if (i % 3 !== 0) {
+          const promise = new Promise(resolve => {
+            setTimeout(() => {
+              this.$set(this.bars, start + i, out[i]);
+              resolve();
+            }, 15);
+          });
+          await promise;
+        } else {
+          this.$set(this.bars, start + i, out[i]);
+        }
+
         //   this.$set(this.bars, start + i, out[i]);
         // }
       }
@@ -99,12 +99,6 @@ export default {
     },
 
     createRainbowArray: function(length) {
-      //   for (let i = 0; i < array.length; i++) {
-      //     let red = this.sin_to_hex(i, 0, array.length); // 0   deg
-      //     let blue = this.sin_to_hex(i, (Math.PI * 2) / 3, array.length); // 120 deg
-      //     let green = this.sin_to_hex(i, (2 * Math.PI * 2) / 3, array.length); // 240 deg
-      //     array[i] = "#" + red + green + blue;
-      //   }
       const sin_to_hex = (i, phase, size) => {
         const sin = Math.sin((Math.PI / size) * 2 * i + phase);
         const int = Math.floor(sin * 127) + 128;
