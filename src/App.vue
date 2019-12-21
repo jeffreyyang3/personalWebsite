@@ -36,6 +36,7 @@ export default {
 <style>
 body {
   background-color: #f6f6f6;
+  cursor: url("~@/assets/images/dino.png"), auto;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

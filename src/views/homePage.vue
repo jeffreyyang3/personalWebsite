@@ -32,10 +32,11 @@
   display: flex;
   justify-content: space-evenly;
   .sortOption {
-    margin: 3px;
+    margin: 5px;
     font-size: 150%;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap;
   }
   .selected {
     color: #4fc08d;
