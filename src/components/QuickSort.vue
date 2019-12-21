@@ -51,7 +51,7 @@ export default {
       this.$set(this.bars, j, temp);
     },
     getPromise(i, j) {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         setTimeout(() => {
           this.swap(i, j);
 

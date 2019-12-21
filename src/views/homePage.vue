@@ -146,9 +146,10 @@ export default {
     getNumberBars: function() {
       // primitive media query kinda stuff
       // let width = window.innerWidth;
+      // 5 px width
       let height = window.innerHeight;
       let width = window.innerWidth;
-      if (height < width) return Math.floor(width * 0.09);
+      if (height < width) return Math.floor(window.innerWidth / 3 / 5);
       else return Math.floor(width * 0.17);
     },
 
