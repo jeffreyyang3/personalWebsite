@@ -17,20 +17,17 @@ export default {
     return {
       title: "Programming",
       content: [
-        `On my own, I've been trying to learn full stack development.
-         I know, real unique. But it's popular for many good reasons.
-         For me, I enjoy web a lot because the speed at which you can
-         make something cool that also looks nice is unmatched in most cases
-         when comparing it to other languages, frameworks and runtimes. 
-         `,
-        `I also really like JavaScript. People hate on it a lot, but I think modern
-         language features and innovative new community developments have helped it
-         shed a lot of the bad parts that come with the language previously only running on
-         low tech web browsers. I've found the general style of the language
-         fun and intuitive to use, especially the emphasis on functions.`,
-        "While I've put basically all of my time so far into learning \
-         web development, I'm open to exploring other avenues as well. \
-         I'm confident I'll be able to pick them up quickly."
+        "Outside of school, I've mostly tried to focus on full stack \
+        development. I enjoy full stack a lot because I feel that modern web \
+        technologies make it relatively easy and fast to create powerful, easily accessible \
+        experiences.",
+        "I have the most experience with front/back-end JavaScript. Aside from JS being \
+        the only language I can use on front-end, I also like it because I really enjoy the \
+        FP/OOP blend and general ease of use.",
+        "I'm also familiar with Python through my job at UCSC's economics department, and \
+        SQL/C++ through coursework.",
+        "There's definitely a lot I haven't learned, but I'm excited to also explore new areas. \
+        I'm confident I'll pick them up quickly."
       ]
     };
   }

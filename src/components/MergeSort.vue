@@ -123,7 +123,7 @@ export default {
         [...new Array(this.numBars || 100)].map((_, index) => index)
       ),
       rainbowArray: this.createRainbowArray(this.numBars || 100),
-      delay: 20,
+      delay: 10,
       resetAllowed: false
     };
   }
