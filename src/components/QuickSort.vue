@@ -1,7 +1,12 @@
 <template>
   <div class="sortContainer">
     <div class="barContainer">
-      <div class="bar" v-for="bar in bars" :key="bar" :style="getStyle(bar)"></div>
+      <div
+        class="bar"
+        v-for="(bar, index) in bars"
+        :key="`val${bar}i${index}`"
+        :style="getStyle(bar)"
+      ></div>
     </div>
   </div>
 </template>
@@ -15,9 +20,7 @@
 <script>
 export default {
   name: "QuickSort",
-  props: {
-    msg: String
-  },
+
   methods: {
     doQs() {
       this.shuffle(this.bars);

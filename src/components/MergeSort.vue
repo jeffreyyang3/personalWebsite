@@ -21,7 +21,7 @@
 export default {
   name: "MergeSort",
   props: {
-    msg: String
+    numBars: Number
   },
   methods: {
     async mergeSort(l, r) {
@@ -78,7 +78,7 @@ export default {
         width: "5px",
         backgroundColor: this.rainbowArray[num],
         marginBottom: "10px",
-        height: num + "px"
+        height: `${Math.floor(num * 0.7)}px`
       };
     },
     shuffle(a) {
@@ -119,8 +119,10 @@ export default {
   },
   data: function() {
     return {
-      bars: this.shuffle([...new Array(90)].map((_, index) => index)),
-      rainbowArray: this.createRainbowArray(90),
+      bars: this.shuffle(
+        [...new Array(this.numBars || 100)].map((_, index) => index)
+      ),
+      rainbowArray: this.createRainbowArray(this.numBars || 100),
       delay: 20,
       resetAllowed: false
     };
