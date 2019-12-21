@@ -28,15 +28,16 @@ export default {
           ", although I guess that iteration had better\
                 performance than this one. My GPA was also better back then.\
                 Maybe I should have kept my website like that. Sadly, it's \
-                too late for that now. I've alraedy put too much time into changing my website. \
+                too late for that now. I've already put too much time into changing my website. \
                 What are sunk costs?",
 
         "This website is now a single-page Vue application written \
                 almost entirely as Vue components, using Vue-Router\
                 to handle navigation. I also used Vue's reactivity to \
-                visualize insertion sort under my name. It's an array of \
-                numbers represented as HTML divs, using setTimeout to pause \
-                the sort after each step so that the array doesn't get \
+                visualize some sorting algorithms under my name. It's an array of \
+                numbers represented as HTML divs, using setTimeout,\
+                promises, and async-await to pause \
+                the sort correctly after each step so that the array doesn't get \
                 sorted too quickly."
       ],
       hasImage: true,

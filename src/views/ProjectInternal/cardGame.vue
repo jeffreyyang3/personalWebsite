@@ -32,7 +32,7 @@ export default {
             from a text file of Cards Against Humanity cards, but the GIF below 
             shows dummy text for the cards since some of the cards
             aren't safe for work.`,
-        "If the game never loads, it's probably because the Heroku free-plan database\
+        "If the game never loads, it's probably because the Heroku free plan database\
              ran out of rows. I don't know how this app manages to exceed the row limit\
              so often. I guess it's an example of one of the drawbacks of heavy abstraction."
       ],

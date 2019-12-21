@@ -25,7 +25,7 @@
 
 <style lang="scss">
 .algContainer {
-  min-height: 80px;
+  min-height: 90px;
 }
 .sortSelector {
   width: 40%;
@@ -126,13 +126,11 @@ button {
 import QuickSort from "@/components/QuickSort";
 
 import MergeSort from "@/components/MergeSort";
-import navBar from "@/components/navBar";
 export default {
   name: "homePage",
   components: {
     QuickSort,
-    MergeSort,
-    navBar
+    MergeSort
   },
   data: function() {
     return {
@@ -150,7 +148,6 @@ export default {
       // let width = window.innerWidth;
       let height = window.innerHeight;
       let width = window.innerWidth;
-      let bars;
       if (height < width) return Math.floor(width * 0.09);
       else return Math.floor(width * 0.17);
     },

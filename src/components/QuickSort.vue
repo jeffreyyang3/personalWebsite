@@ -52,11 +52,6 @@ export default {
     },
     getPromise(i, j) {
       return new Promise((resolve, reject) => {
-        const cancel = () => {
-          // document.getElementById("reset").removeEventListener(cancel);
-          reject();
-        };
-
         setTimeout(() => {
           this.swap(i, j);
 
