@@ -1,21 +1,59 @@
-// project description
-
 <template>
   <div id="homePage">
     <h1>Jeffrey Yang</h1>
-    <!-- <h2 class="desc"> CS Major @ UC Santa Cruz</h2> <br> -->
-    <div id="sort">
-      <div v-bind:key="bar" v-bind:style="divClasses(bar)" v-for="bar in array"></div>
-    </div>
 
-    <input type="range" min="20" max="100" v-model="delay" class="slider" id="myRange">
-    <br>
-    <h3 style="display: inline-block">Delay per step: {{ delay }} ms</h3>
-    <div id="resetButton" @click="resetSort">Reset</div>
+    <div class="center">
+      <div class="algContainer">
+        <MergeSort ref="ms" :numBars="arrayLength" v-if="selectedSort === 'Merge Sort'" />
+        <QuickSort ref="qs" v-else :numBars="arrayLength" />
+      </div>
+      <div class="sortSelector">
+        <div
+          class="sortOption"
+          v-on:click="selectedSort = 'Quicksort'"
+          :class="{selected: selectedSort === 'Quicksort'}"
+        >Quicksort</div>
+        <div
+          class="sortOption"
+          v-on:click="selectedSort = 'Merge Sort'"
+          :class="{selected: selectedSort === 'Merge Sort'}"
+        >Merge Sort</div>
+      </div>
+    </div>
   </div>
 </template>
 
-<style>
+<style lang="scss">
+.algContainer {
+  min-height: 90px;
+}
+.sortSelector {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  .sortOption {
+    margin: 5px;
+    font-size: 150%;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .selected {
+    color: #4fc08d;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.center .sortContainer {
+  display: flex;
+  justify-content: center;
+}
 #resetButton {
   border-radius: 0.3em;
   display: inline;
@@ -84,48 +122,34 @@ button {
 }
 </style>
 
-
 <script>
+import QuickSort from "@/components/QuickSort";
+
+import MergeSort from "@/components/MergeSort";
 export default {
   name: "homePage",
+  components: {
+    QuickSort,
+    MergeSort
+  },
   data: function() {
     return {
       array: [],
       upper: 0,
       sortDone: false,
-      delay: 40
+      delay: 40,
+      selectedSort: "Quicksort",
+      arrayLength: this.getNumberBars()
     };
   },
   methods: {
-    insertionSort: function() {
-      setTimeout(
-        function timeoutSort(array, i) {
-          if (i < array.length) {
-            this.arrayStep(array, i);
-            setTimeout(timeoutSort.bind(this), this.delay, array, i + 1);
-          } else {
-            this.sortDone = true;
-          }
-        }.bind(this),
-        this.delay,
-        this.array,
-        0
-      );
-      return this.array;
-    },
-
     getNumberBars: function() {
       // primitive media query kinda stuff
       // let width = window.innerWidth;
       let height = window.innerHeight;
       let width = window.innerWidth;
-      let bars;
-      if (height < width) {
-        bars = width * 0.11;
-      } else {
-        bars = width * 0.3;
-      }
-      return Math.floor(bars);
+      if (height < width) return Math.floor(width * 0.09);
+      else return Math.floor(width * 0.17);
     },
 
     createArray: function(arraySize) {
@@ -135,62 +159,10 @@ export default {
       }
 
       this.Shuffle(this.array);
-    },
-    arrayStep: function(arry, i) {
-      arry.push();
-      const temp = arry[i];
-      let j = i - 1;
-      while (j >= 0 && arry[j] > temp) {
-        arry[j + 1] = arry[j];
-        j--;
-      }
-      arry[j + 1] = temp;
-    },
-
-    Shuffle(a) {
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    },
-
-    divClasses: function(value) {
-      return {
-        width: "3px",
-        height: `${value * 0.015}em`,
-        display: "inline-block",
-        //border: ".03em solid black",
-        backgroundColor: this.rainbowArray[value - 1],
-        //float: 'left',
-        verticalAlign: "top"
-        // marginTop: 'auto',
-      };
-    },
-    createRainbowArray: function(array) {
-      for (let i = 0; i < array.length; i++) {
-        let red = this.sin_to_hex(i, 0, array.length); // 0   deg
-        let blue = this.sin_to_hex(i, (Math.PI * 2) / 3, array.length); // 120 deg
-        let green = this.sin_to_hex(i, (2 * Math.PI * 2) / 3, array.length); // 240 deg
-        array[i] = "#" + red + green + blue;
-      }
-    },
-    sin_to_hex: function(i, phase, size) {
-      const sin = Math.sin((Math.PI / size) * 2 * i + phase);
-      const int = Math.floor(sin * 127) + 128;
-      const hex = int.toString(16);
-
-      return hex.length === 1 ? "0" + hex : hex;
-    },
-    resetSort: function() {
-      this.createArray(this.getNumberBars());
-      this.rainbowArray = new Array(this.array.length);
-      this.createRainbowArray(this.rainbowArray);
-      this.insertionSort();
     }
   },
   mounted() {
-    this.resetSort();
+    // this.resetSort();
   }
 };
 </script>

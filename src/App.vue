@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <homePage></homePage>
+
     <navBar :internalLinks="links" :internal="false"></navBar>
 
     <transition name="slide-fade">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -12,13 +13,13 @@
 
 <script>
 import homePage from "./views/homePage.vue";
-import navBar from "./components/navBar.vue";
+import navBar from "@/components/navBar";
 
 export default {
   name: "app",
   components: {
-    navBar,
-    homePage
+    homePage,
+    navBar
   },
   data: function() {
     return {
@@ -35,6 +36,7 @@ export default {
 <style>
 body {
   background-color: #f6f6f6;
+  cursor: url("~@/assets/images/dino.png"), auto;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
