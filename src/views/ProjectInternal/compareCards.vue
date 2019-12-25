@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       title:
-        '<a class= "websiteLink" href="comparecards4.me">comparecards4.me</a>',
+        '<a class= "websiteLink" target="_blank" href="https://comparecards4.me">comparecards4.me</a>',
       technologies: "Vue, Vuex",
       description: [
         `Lately, I've been really into maximizing credit card rewards. It's become
