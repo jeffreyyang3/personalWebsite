@@ -39,12 +39,10 @@ body {
   cursor: url("~@/assets/images/dino.png"), auto;
 }
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 
-  color: #2c3e50;
 }
 nav {
   padding-top: 20px;

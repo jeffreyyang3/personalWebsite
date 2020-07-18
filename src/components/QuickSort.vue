@@ -18,8 +18,15 @@
 </style>
 
 <script>
+const chroma = require('chroma-js');
 export default {
   name: "QuickSort",
+  computed: {
+    colorArry () {
+      return chroma.scale(['#a81816', '#2a0102']).colors(this.numBars)
+    }
+    // echo: chroma.scale(['#a18816', '#2a0102']).colors(this.numBars)
+  },
 
   methods: {
     doQs() {
@@ -29,7 +36,7 @@ export default {
     getStyle(num) {
       return {
         width: "5px",
-        backgroundColor: this.rainbowArray[num],
+        backgroundColor: this.colorArry[num],
         marginBottom: "10px",
         height: `${Math.floor(num * 0.7)}px`
       };
@@ -105,6 +112,7 @@ export default {
         )
       );
     }
+
   },
 
   mounted() {
