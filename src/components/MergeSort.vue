@@ -77,7 +77,6 @@ export default {
       return {
         width: "5px",
         backgroundColor: this.rainbowArray[num],
-        marginBottom: "10px",
         height: `${Math.floor(num * 0.7)}px`
       };
     },

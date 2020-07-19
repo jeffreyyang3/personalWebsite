@@ -4,7 +4,12 @@
         :key="title" :title="title"
         :technologies="data.technologies"
     :description="data.description" :path="data.path"/>-->
-    <navBar :internalLinks="links" :internal="true" :hasTitle="true" :title="title"></navBar>
+    <navBar
+      :internalLinks="links"
+      :internal="true"
+      :hasTitle="true"
+      :title="title"
+    ></navBar>
     <transition name="slide-fade">
       <router-view />
     </transition>
@@ -18,20 +23,19 @@ import navBar from "@/components/navBar.vue";
 export default {
   name: "projects",
   components: {
-    navBar
+    navBar,
   },
 
   data: function() {
     return {
-      links: {
-        "comparecards4.me": "/projects/compareCards",
-        "Personal Website": "/projects/personalWebsite",
-        "Cards Against Humanity": "/projects/cardGame",
-        "Reddit CLI": "/projects/redditScript"
-      },
-      title: "Projects:"
+      links: [
+        { name: "comparecards4.me", route: "/projects/compareCards" },
+        { name: "Personal Website", route: "/projects/personalWebsite" },
+        { name: "Cards Against Humanity", route: "/projects/cardGame" },
+        { name: "Reddit CLI", route: "/projects/redditScript" },
+      ],
     };
-  }
+  },
 };
 
 /*
@@ -47,4 +51,3 @@ path: String, */
   width: 100%;
 }
 </style>
-

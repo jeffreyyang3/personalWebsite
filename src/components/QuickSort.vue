@@ -35,10 +35,9 @@ export default {
     },
     getStyle(num) {
       return {
-        width: "5px",
+        width: "10px",
         backgroundColor: this.colorArry[num],
-        marginBottom: "10px",
-        height: `${Math.floor(num * 0.7)}px`
+        height: `35px`
       };
     },
     shuffle(a) {
@@ -135,7 +134,7 @@ export default {
     return {
       bars: this.getBars(),
       rainbowArray: this.createRainbowArray([...new Array(this.numBars)]),
-      delay: 20,
+      delay: 50,
       resetAllowed: false
     };
   }

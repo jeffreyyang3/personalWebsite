@@ -1,91 +1,85 @@
 <template>
   <div id="app">
-    <homePage></homePage>
-
-    <navBar :internalLinks="links" :internal="false"></navBar>
-
+    <Header />
+    <div class="content">
     <transition name="slide-fade">
       <router-view />
     </transition>
-  </div>
-</template>
 
+    </div>
+    <Footer />
+      </div>
+</template>
+<style lang="scss">
+body {
+  margin: 0;
+}
+
+#app {
+  height: 100vh;
+  margin-left: 8px;
+  margin-right: 8px;
+  overflow: hidden;
+  #header {
+    height: 170px;
+    position: fixed;
+    background-color: #dde7e3;
+  }
+
+  .content {
+    margin-top: 170px;
+    margin-bottom: 100px;
+    height: calc(100vh - 250px);
+    overflow: scroll;
+
+    // -ms-overflow-style: none; /* IE and Edge */
+    // scrollbar-width: none; /* Firefox */
+    
+  }
+  // &::-webkit-scrollbar {
+  //   display: none;
+  //   background: transparent;
+
+  // }
+  #footer {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+</style>
 
 <script>
-import homePage from "./views/homePage.vue";
-import navBar from "@/components/navBar";
+import Header from "./views/Header.vue";
+import Footer from "./views/Footer.vue";
 
 export default {
   name: "app",
   components: {
-    homePage,
-    navBar
+    Header,
+    Footer,
   },
   data: function() {
     return {
       links: {
         "About Me": "/about",
-        Projects: "/projects"
-      }
+        Projects: "/projects",
+      },
     };
-  }
+  },
 };
 </script>
 
-
 <style>
 body {
-  background-color: #f6f6f6;
-  cursor: url("~@/assets/images/dino.png"), auto;
+  background-color: #dde7e3;
 }
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-}
-nav {
-  padding-top: 20px;
-  clear: both;
-}
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 150%;
-  -webkit-transition-duration: 0.2s; /* Safari */
-  transition-duration: 0.2s;
-  cursor: pointer;
-}
-
-nav a:hover {
-  color: #4fc08d;
-}
-
-#homePage > h1 {
-  font-size: 400%;
-  margin-bottom: 0.2em;
-}
-#homePage > h2 {
-  font-size: 180%;
-  margin-bottom: -0.1em;
-}
-
-@media (max-width: 600px) {
-  #homePage > h1 {
-    font-size: 300%;
-  }
-  #homePage > h2 {
-    font-size: 140%;
-  }
-}
-
-.descContent {
-  text-align: center;
-  font-size: 120%;
-  max-width: 50ch;
-  margin: 0 auto;
 }
 
 .fade-enter-active,
