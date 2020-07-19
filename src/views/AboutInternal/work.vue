@@ -15,7 +15,7 @@ export default {
   },
   data: function() {
     return {
-      title: "Work Experience",
+      title: "Professional Experience",
       content: [
         "This summer, I'm going to be an intern at " +
           "Poshmark"

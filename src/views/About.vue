@@ -3,6 +3,11 @@
     <!--  <genericDesc v-for="(content, title) in items"
     v-bind:key="title" :title="title" :content="content"/>-->
 
+    <navBar
+      :internalLinks="links"
+      :internal="true"
+    />
+
     <transition name="slide-fade">
       <router-view />
     </transition>
@@ -12,22 +17,23 @@
 <script>
 // @ is an alias to /src
 
+import navBar from "@/components/navBar.vue";
+
 
 export default {
   name: "about",
 
   components: {
+    navBar
   },
   data: function() {
     return {
-      links: {
-        General: "/about/aboutMe",
-        Programming: "/about/programming",
-        "Work Experience": "/about/work",
-        "Other Stuff": "/about/otherStuff"
-      },
-      title: "About Me:",
-      hasTitle: true
+      links: [
+        { name: "general", route: "/about/aboutMe"},
+        { name: "Programming", route: "/about/programming"},
+        { name: "Professional Experience", route: "/about/work"},
+        { name: "Other Stuff", route: "/about/otherStuff"}
+      ]
     };
   }
 };
