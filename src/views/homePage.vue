@@ -1,7 +1,7 @@
 <template>
   <div id="homePage">
     <h1>Jeffrey Yang</h1>
-
+    <h3>Info on this website is outdated.</h3>
     <div class="center">
       <div class="algContainer">
         <MergeSort ref="ms" :numBars="arrayLength" v-if="selectedSort === 'Merge Sort'" />
