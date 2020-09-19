@@ -31,7 +31,7 @@ export default {
         width: "5px",
         backgroundColor: this.rainbowArray[num],
         marginBottom: "10px",
-        height: `${Math.floor(num * 0.7)}px`
+        height: `${Math.floor(num * 0.7)}px`,
       };
     },
     shuffle(a) {
@@ -43,6 +43,10 @@ export default {
         a[j] = x;
       }
       a.push();
+      const midIdx = a.indexOf(Math.floor(a.length / 2));
+      const save = a[midIdx];
+      a[midIdx] = a[a.length - 1];
+      a[a.length - 1] = save;
       return a;
     },
     swap(i, j) {
@@ -51,7 +55,7 @@ export default {
       this.$set(this.bars, j, temp);
     },
     getPromise(i, j) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         setTimeout(() => {
           this.swap(i, j);
 
@@ -83,7 +87,7 @@ export default {
         this.quickSort(partitionIndex + 1, high);
       }
     },
-    createRainbowArray: function(array) {
+    createRainbowArray: function (array) {
       for (let i = 0; i < array.length; i++) {
         let red = this.sin_to_hex(i, 0, array.length); // 0   deg
         let blue = this.sin_to_hex(i, (Math.PI * 2) / 3, array.length); // 120 deg
@@ -92,19 +96,17 @@ export default {
       }
       return array;
     },
-    sin_to_hex: function(i, phase, size) {
+    sin_to_hex: function (i, phase, size) {
       const sin = Math.sin((Math.PI / size) * 2 * i + phase);
       const int = Math.floor(sin * 127) + 128;
       const hex = int.toString(16);
       return hex.length === 1 ? "0" + hex : hex;
     },
-    getBars: function() {
-      return this.shuffle(
-        [...new Array(this.numBars ? this.numBars : 100)].map(
-          (_, index) => index
-        )
-      );
-    }
+    getBars: function () {
+      const numEls = this.numBars ? this.numBars : 100;
+      const arr = this.shuffle([...new Array(numEls)].map((_, index) => index));
+      return arr;
+    },
   },
 
   mounted() {
@@ -121,16 +123,16 @@ export default {
     // });
   },
   props: {
-    numBars: Number
+    numBars: Number,
   },
-  data: function() {
+  data: function () {
     return {
       bars: this.getBars(),
       rainbowArray: this.createRainbowArray([...new Array(this.numBars)]),
       delay: 20,
-      resetAllowed: false
+      resetAllowed: false,
     };
-  }
+  },
 };
 </script>
 
