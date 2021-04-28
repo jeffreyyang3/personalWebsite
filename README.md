@@ -1,29 +1,9 @@
-# personalwebsite
+# My Personal Website
 
-## Project setup
-```
-npm install
-```
+My personal website. It's not up anywhere, but it looks cool, trust. If you're really curious you can clone and run it locally
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
